@@ -1,7 +1,7 @@
-import {Component} from 'react';
-import {} from 'draft-js';
+import React, {Component} from 'react';
+import {Editor, EditorState} from 'draft-js';
 
-class Editor extends Component {
+class PostEditor extends Component {
 
     constructor(props) {
         
@@ -12,11 +12,16 @@ class Editor extends Component {
 
     render() {
 
-        return <Editor editorState={this.state.editorState} onChange={this.onChange} />;
+        return (
+            <>
+                <h1>Editeur D'article</h1>
+                <Editor editorState={this.state.editorState} onChange={this.onChange} />
+            </>
+        );
 
     }
 
 
 }
 
-export default Editor;
+export default PostEditor;
