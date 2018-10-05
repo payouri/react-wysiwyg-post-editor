@@ -1,5 +1,12 @@
-@import './../../node_modules/bulma/sass/bulma';
+@import './../../node_modules/bulma/bulma.sass';
 
 body {
     margin: 0
+}
+button > svg {
+    pointer-events: none;
+    user-select: none;
+}
+.has-addons .button {
+    height: 100%;
 }

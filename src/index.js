@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+
 import Wysiwyg from './components/Wysiwyg';
 import { hot } from 'react-hot-loader'
+
+import './sass/styles.scss';
 
 class App extends Component {
 

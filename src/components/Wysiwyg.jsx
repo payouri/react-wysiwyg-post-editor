@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Editor, EditorState} from 'draft-js';
+import { EditorState} from 'draft-js';
+import EditorArea from './EditorArea';
+import EditorTools from './EditorTools';
 
 class PostEditor extends Component {
 
@@ -7,7 +9,10 @@ class PostEditor extends Component {
         
         super(props);
         this.state = {editorState: EditorState.createEmpty()}
-        this.onChange = editorState => this.setState({editorState});
+        this.onAreaChange = this.onAreaChange.bind(this);
+    }
+    onAreaChange(editorState) {
+        this.setState({editorState});
     }
 
     render() {
@@ -15,7 +20,14 @@ class PostEditor extends Component {
         return (
             <>
                 <h1>Editeur D'article</h1>
-                <Editor editorState={this.state.editorState} onChange={this.onChange} />
+                <EditorTools 
+                    editorState={this.state.editorState}
+                    onChange={this.onAreaChange}
+                />
+                <EditorArea 
+                    editorState={this.state.editorState} 
+                    onChange={this.onAreaChange}
+                />
             </>
         );
 
